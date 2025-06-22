@@ -10,7 +10,7 @@ import { simpleParser, ParsedMail, Attachment } from 'mailparser';
 import * as nodemailer from 'nodemailer';
 import * as Mail from 'nodemailer/lib/mailer';
 import * as FormData from 'form-data';
-import { join } from 'path';
+import { join, resolve, normalize } from 'path';
 
 @Injectable()
 export class EmailParserService {
@@ -73,7 +73,8 @@ export class EmailParserService {
       });
       return response.data as Buffer;
     } else {
-      return fs.readFile(source);
+      const normalizedPath = normalize(resolve(source));
+      return fs.readFile(normalizedPath);
     }
   }
 
