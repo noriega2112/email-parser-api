@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { MapperModule } from './mapper/mapper.module';
 import { AutomapperModule } from '@automapper/nestjs';
 import { classes } from '@automapper/classes';
+import { EmailParserModule } from './email-parser/email-parser.module';
 
 @Module({
   imports: [
@@ -12,6 +13,8 @@ import { classes } from '@automapper/classes';
     AutomapperModule.forRoot({
       strategyInitializer: classes(),
     }),
+
+    EmailParserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
