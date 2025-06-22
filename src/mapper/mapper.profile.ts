@@ -1,8 +1,8 @@
 import { createMap, forMember, mapFrom, Mapper } from '@automapper/core';
 import { AutomapperProfile, InjectMapper } from '@automapper/nestjs';
 import { Injectable } from '@nestjs/common';
-import { SesRecord } from '@/mapper/dto/incoming-ses.dto';
-import { ProcessedEmailDto } from '@/mapper/dto/processed-email.dto';
+import { SesRecord } from './dto/incoming-ses.dto';
+import { ProcessedEmailDto } from './dto/processed-email.dto';
 
 @Injectable()
 export class MapperProfile extends AutomapperProfile {
