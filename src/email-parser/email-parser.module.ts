@@ -4,6 +4,6 @@ import { EmailParserService } from './email-parser.service';
 
 @Module({
   controllers: [EmailParserController],
-  providers: [EmailParserService]
+  providers: [EmailParserService],
 })
 export class EmailParserModule {}
